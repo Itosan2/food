@@ -1,15 +1,23 @@
-import React, { useState } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import logoImg from "../assets/logo_1.png";
 import WinSize from "./WinSize";
 
 export default function Header() {
   const location = useLocation();
   // const isActive = location.pathname === "/menu";
-  const isActive = location.pathname.startsWith("/menu");
+  const isActive = location.pathname.startsWith("/food/menu");
+
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (location === "/food/home") {
+      navigate("/home");
+    }
+  }, [location.pathname, navigate]);
+
   return (
     <header>
-      <Link to="/">
+      <Link to="home">
         <div className={`header-logo ${isActive ? "" : "active"}`}>
           {/* <div className="header-logo"> */}
           <span>ch</span>
@@ -24,7 +32,7 @@ export default function Header() {
       <nav className="navbar">
         <ul className="navbar-list">
           <li>
-            <NavLink to="/" className="navbar-item">
+            <NavLink to="home" className="navbar-item">
               Home
             </NavLink>
           </li>

@@ -44,8 +44,6 @@ export default function Model(props) {
         transition={{ delay: 0.25, duration: 0.5, ease: easeOut }}
       >
         <p className="paragraph1">{props.paragraph1}</p>
-        <br />
-        <p className="paragraph2">{props.paragraph2}</p>
       </m.div>
     </m.div>
   );

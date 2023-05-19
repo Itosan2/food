@@ -12,17 +12,9 @@ import { easeOut, motion as m } from "framer-motion";
 import Model from "./menu/Model";
 
 export default function MenuNavbar() {
-  const location = useLocation();
-  const navigate = useNavigate();
-  useEffect(() => {
-    if (location === "/menu/about") {
-      navigate("/description");
-    }
-  }, [location.pathname, navigate]);
-
   return (
     <div className="navbar-container">
-      <Link to="/">
+      <NavLink to="/food/home">
         <m.div
           className="logo"
           initial={{ opacity: 0 }}
@@ -43,7 +35,7 @@ export default function MenuNavbar() {
           <span className="logo-text3">o</span>
           <span className="logo-text4">ng</span>
         </m.div>
-      </Link>
+      </NavLink>
       <ul className="nav-menu">
         <li className="nav-item">
           <NavLink

@@ -8,6 +8,7 @@ import {
   RouterProvider,
   Navigate,
   useLocation,
+  useNavigate,
 } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Home from "./components/Home";
@@ -35,13 +36,11 @@ import MenuYong from "./pages/menu/MenuYong";
 import MenuFruit from "./pages/menu/MenuFruit";
 import MenuChili from "./pages/menu/MenuChili";
 
-import "./js/index";
-
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<RootLayout />}>
-        <Route index element={<Home />} />
+      <Route path="food" element={<RootLayout />}>
+        <Route index path="home" element={<Home />} />
         <Route path="about" element={<About />}>
           <Route index element={<Navigate to="meal" />} />
           <Route path="meal" element={<MealFrame />} />

@@ -8,11 +8,7 @@ export default function MenuContent() {
   return (
     <div className="menu-content">
       <Outlet title={"hoooo"} />
-
-      <p>
-        The red fox (Vulpes vulpes) is the largest of the true foxes and one of
-        the most widely distributed members of the order Carnivora.
-      </p>
+      {/* <h1 className="menu-side">Hellow sfsffsfsfsfsfff ffsfsfsfsfssffsf</h1> */}
     </div>
   );
 }
