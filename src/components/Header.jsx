@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import logoImg from "../assets/logo_1.png";
-import WinSize from "./WinSize";
+// import WinSize from "./WinSize";
 
 export default function Header() {
   const location = useLocation();
@@ -23,12 +23,10 @@ export default function Header() {
           <span>ch</span>
           <span>o</span>
           <span>o</span>
-          <div className="text-rotate">ng</div>
+          <span>ng</span>
         </div>
       </Link>
-      <div>
-        <WinSize />
-      </div>
+
       <nav className="navbar">
         <ul className="navbar-list">
           <li>

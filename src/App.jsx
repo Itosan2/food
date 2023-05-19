@@ -39,7 +39,8 @@ import MenuChili from "./pages/menu/MenuChili";
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="food" element={<RootLayout />}>
+      <Route basename="/food" path="food" element={<RootLayout />}>
+        <Route index element={<Home />} />
         <Route index path="home" element={<Home />} />
         <Route path="about" element={<About />}>
           <Route index element={<Navigate to="meal" />} />
