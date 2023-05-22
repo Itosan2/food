@@ -40,17 +40,6 @@ export default function HomePage1() {
         page3: !prevActivePages.page3,
       }));
     }
-
-    // if (activePages.page3) {
-    //   setActivePages(() => ({
-    //     page1: true,
-    //     page2: true,
-    //   }));
-    // }
-    // if (activePages.page2) {
-    //   console.log("page 2 true");
-    //   setActivePages({ page1: true });
-    // }
   };
 
   return (

@@ -65,7 +65,7 @@
   gap: 0.5rem;
   overflow: hidden;
   /* border: 1px solid blue; */
-  transition: 5s ease;
+  transition: 0.3s ease;
 }
 
 .home-page1.active .img-wrapper {
@@ -88,7 +88,7 @@
   box-sizing: content-box;
   padding-right: 17px;
   overflow: scroll;
-  transition: transform 5s ease;
+  transition: transform 0.3s ease;
 }
 
 .home-page1.active img {
@@ -202,7 +202,7 @@
   writing-mode: initial;
   letter-spacing: 2px;
   text-align: center;
-  transition: all 1s ease;
+  transition: all 0.3s ease;
 }
 
 /* -------------------------*/
@@ -274,5 +274,5 @@
   writing-mode: initial;
   letter-spacing: 2px;
   text-align: center;
-  transition: all 1s ease;
+  transition: all 0.3s ease;
 }
