@@ -1,14 +1,23 @@
-import React from "react";
-import { easeOut, motion as m } from "framer-motion";
+import React, { useState } from "react";
+import { AnimatePresence, easeOut, motion as m } from "framer-motion";
 
 export default function Model(props) {
+  const containerVariants = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: { duration: 0.3 },
+    },
+  };
   return (
     <m.div
       className="menu-model"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ delay: 0.25, duration: 0.5, ease: easeOut }}
+      transition={{ duration: 0.5, ease: easeOut }}
     >
       <m.div
         className="model-title"
@@ -19,7 +28,6 @@ export default function Model(props) {
       >
         {props.title}
       </m.div>
-
       <m.div
         className="img-container"
         initial={{ x: "-100px" }}

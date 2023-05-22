@@ -13,7 +13,7 @@ import {
 import { AnimatePresence } from "framer-motion";
 import Home from "./components/Home";
 import Contact from "./components/Contact";
-import About from "./components/About";
+import Daily from "./components/Daily";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Menu from "./components/Menu";
@@ -42,7 +42,7 @@ function App() {
       <Route basename="/food" path="food" element={<RootLayout />}>
         <Route index element={<Home />} />
         <Route index path="home" element={<Home />} />
-        <Route path="about" element={<About />}>
+        <Route path="daily" element={<Daily />}>
           <Route index element={<Navigate to="meal" />} />
           <Route path="meal" element={<MealFrame />} />
           <Route path="monday" element={<Monday />} />
@@ -77,12 +77,12 @@ function App() {
 export default App;
 
 const RootLayout = () => {
+  const location = useLocation();
+
   return (
     <div className="main-container">
       <Header />
-      <div>
-        <Outlet />
-      </div>
+      <Outlet />
       <Footer />
     </div>
   );

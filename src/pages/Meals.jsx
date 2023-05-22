@@ -7,6 +7,7 @@ import imgFri from "../assets/fri.jpg";
 import imgDinner from "../assets/fish.jpg";
 import imgLunch from "../assets/lunch.jpg";
 import imgBfast from "../assets/bfast.jpg";
+import imground from "../assets/test.png";
 
 export function MealFrame() {
   return (
@@ -28,7 +29,7 @@ export function Monday() {
 }
 
 export function Tues() {
-  return <img className="tue-img meal-img" src={imgTues} alt="" />;
+  return <img className="tue-img meal-img" src={imground} alt="" />;
 }
 export function Weds() {
   return <img className="wed-img meal-img" src={imgWeds} alt="" />;

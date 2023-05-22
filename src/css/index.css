@@ -90,7 +90,7 @@ span:nth-of-type(2) {
 span:nth-of-type(3) {
   color: var(--green);
 }
-span:only-of-type(4) {
+span:nth-of-type(4) {
   color: orange;
 }
 
@@ -161,21 +161,6 @@ span:only-of-type(4) {
 
 .about-section {
   padding: 40px 20px;
-}
-.home-section {
-  display: flex;
-  justify-content: center;
-  padding: 40px 40px;
-  margin: 0 auto;
-}
-
-.home-section img {
-  max-width: 60%;
-  height: 400px;
-  object-fit: cover;
-  border-radius: 5px;
-  /* background-color: yellow; */
-  box-shadow: 2px 2px 5px black;
 }
 
 footer {

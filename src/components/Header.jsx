@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import logoImg from "../assets/logo_1.png";
-// import WinSize from "./WinSize";
+import WinSize from "./WinSize";
 
 export default function Header() {
   const location = useLocation();
@@ -26,6 +26,7 @@ export default function Header() {
           <span>ng</span>
         </div>
       </Link>
+      <WinSize />
 
       <nav className="navbar">
         <ul className="navbar-list">
@@ -35,8 +36,8 @@ export default function Header() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="about" className="navbar-item">
-              About
+            <NavLink to="daily" className="navbar-item">
+              Daily
             </NavLink>
           </li>
           <li>

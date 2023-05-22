@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink, Link, useLocation, useNavigate } from "react-router-dom";
 // import { GiFox } from "react-icons/gi";
 import { GiSteak } from "react-icons/gi";
@@ -9,7 +9,7 @@ import { GiFruitBowl } from "react-icons/gi";
 import { RiInformationLine } from "react-icons/ri";
 import { easeOut, motion as m } from "framer-motion";
 
-import Model from "./menu/Model";
+// import Model from "./menu/Model";
 
 export default function MenuNavbar() {
   return (
@@ -17,10 +17,8 @@ export default function MenuNavbar() {
       <NavLink to="/food/home">
         <m.div
           className="logo"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ delay: 0.25, duration: 5, ease: easeOut }}
+          whileHover={{ scale: 1.2 }}
+          transition={{ delay: 0.25, duration: 0.3, ease: easeOut }}
         >
           <m.span
             className="logo-text1"
