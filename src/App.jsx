@@ -14,6 +14,7 @@ import { AnimatePresence } from "framer-motion";
 import Home from "./components/Home";
 import Contact from "./components/Contact";
 import Daily from "./components/Daily";
+import Modal from "./components/Modal";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Menu from "./components/Menu";
@@ -64,6 +65,7 @@ function App() {
           <Route path="menufruit" element={<MenuFruit />} />
         </Route>
         <Route path="contact" element={<Contact />} />
+        {/* <Route path="modal" element={<Modal />} /> */}
       </Route>
     )
   );

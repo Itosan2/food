@@ -1,0 +1,13 @@
+.custom-button {
+  padding: 1em 2em;
+  font-weight: bold;
+  border-radius: 5px;
+  color: white;
+}
+
+.custom-button-default {
+  background-color: yellow;
+}
+.custom-button-blue {
+  background-color: blue;
+}

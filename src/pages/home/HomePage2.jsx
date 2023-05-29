@@ -1,100 +1,85 @@
-import React, { useState } from "react";
-import imgSoup1 from "../../assets/soup1.png";
-import imgSoup3 from "../../assets/soup3.png";
-import imgSoup4 from "../../assets/soup4.png";
-import imgSoup5 from "../../assets/soup5.png";
-import imgSoup6 from "../../assets/soup6.png";
-import imgfish1 from "../../assets/fish1.png";
-
+import React, { useEffect, useRef, useState } from "react";
+import imgAbacus from "../../assets/abacus2.png";
 import "../../css/home.css";
 
-export default function HomePage1() {
-  const [isOpen, setIsOpen] = useState(false);
-  function tabClick(e) {
-    const homePage1 = document.querySelector(".home-page1");
-    const homePage2 = document.querySelector(".home-page2");
-    const homePage3 = document.querySelector(".home-page3");
+const HomePage2 = () => {
+  const scrollRef = useRef();
+  const [elVisible, setElVisible] = useState();
+  const [pageScroll, setPageScroll] = useState(true);
+  const rootElement = document.getElementById("test");
+  const [count, setCount] = useState(0);
 
-    const tab1 = e.currentTarget.classList.contains("tab-1");
-    const tab2 = e.currentTarget.classList.contains("tab-2");
-    const tab3 = e.currentTarget.classList.contains("tab-3");
+  console.log("count", count);
+  // useEffect(() => {
+  //   if (count >= 25 && { pageScroll }) {
+  //     scrollRef.current.scrollIntoView({ block: "start" });
+  //     setPageScroll(false);
+  //     // rootElement.scrollTo(0, 0);
+  //   }
+  // }, [count]);
 
-    if (tab1) {
-      homePage1.classList.toggle("active");
-    } else if (tab2) {
-      homePage2.classList.toggle("active");
-      if (homePage2.classList.contains("active")) {
-        if (!homePage1.classList.contains("active")) {
-          homePage1.classList.toggle("active");
-        }
-      }
-    } else if (tab3) {
-      homePage3.classList.toggle("active");
-      if (homePage3.classList.contains("active")) {
-        if (!homePage1.classList.contains("active")) {
-          homePage1.classList.toggle("active");
-        }
-        if (!homePage2.classList.contains("active")) {
-          homePage2.classList.toggle("active");
-        }
-      }
-    }
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      setElVisible(entry.isIntersecting);
+
+      // console.log("IntersectionRatio", entry.intersectionRatio);
+    });
+    observer.observe(scrollRef.current);
+  }, [scrollRef]);
+
+  console.log("scrollRef", scrollRef);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          // entry.target.innerText = `${Math.round(
+          //   entry.intersectionRatio * 100
+          // )}%`;
+          setCount(entry.intersectionRatio * 100);
+        });
+      },
+      { threshold: [0, 0.25, 0.5, 0.75, 1] }
+    );
+
+    observer.observe(document.getElementById("test"));
+  }, [scrollRef]);
+
+  function scrollToTop() {
+    console.log("scrollToTop - activated");
+    scrollRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
   }
+  function scrollToTop2() {
+    console.log("scrollToTop2 - activated");
+    rootElement.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
   return (
-    <div className="home-pages">
-      <div className="home-page1">
-        <div className="left-side">
-          <p>soup</p>
-        </div>
-        <div className="img-wrapper">
-          <img src={imgSoup1} alt="" />
-          <img src={imgSoup3} alt="" />
-          <img src={imgSoup4} alt="" />
-          <img src={imgSoup5} alt="" />
-          <img src={imgSoup6} alt="" />
-          <img src={imgfish1} alt="" />
-        </div>
-        <div className="tab-wrapper tab-1" onClick={tabClick}>
-          <div className="tab-item1"></div>
-          <div className="tab-item2"></div>
-        </div>
+    <div className="home-page2-container" ref={scrollRef}>
+      <div className="page2-left-side">
+        <h2>
+          The Joys of <span> Home-Cooked Meals </span>: Nourishing Delights at
+          Your Fingertips
+        </h2>
+        <p>
+          There's something truly special about home-cooked meals. Beyond the
+          tantalizing aromas and mouthwatering flavors, they evoke a sense of
+          comfort, tradition, and love. In a fast-paced world filled with
+          convenience foods and takeout options, home-cooked meals bring us back
+          to the heart of the kitchen.
+        </p>
       </div>
-
-      <div className="home-page2">
-        <div className="left-side left-side-page2">
-          <p>meat</p>
+      <div className="page2-right-side">
+        <div className="page2-img-wrapper">
+          <img src={imgAbacus} alt="" />
         </div>
-        <div className="img-wrapper">
-          <img src={imgSoup1} alt="" />
-          <img src={imgSoup3} alt="" />
-          <img src={imgSoup4} alt="" />
-          <img src={imgSoup5} alt="" />
-          <img src={imgSoup6} alt="" />
-          <img src={imgfish1} alt="" />
-        </div>
-        <div className="tab-wrapper tab-2" onClick={tabClick}>
-          <div className="tab-item1"></div>
-          <div className="tab-item2"></div>
-        </div>
-      </div>
-
-      <div className="home-page3">
-        <div className="left-side left-side-page3">
-          <p>other</p>
-        </div>
-        <div className="img-wrapper">
-          <img src={imgSoup1} alt="" />
-          <img src={imgSoup3} alt="" />
-          <img src={imgSoup4} alt="" />
-          <img src={imgSoup5} alt="" />
-          <img src={imgSoup6} alt="" />
-          <img src={imgfish1} alt="" />
-        </div>
-        <div className="tab-wrapper tab-3" onClick={tabClick}>
-          <div className="tab-item1"></div>
-          <div className="tab-item2"></div>
-        </div>
+        <p>
+          Hakka Taro (Yam) Abacus seeds [算盘子]. One of the many traditional
+          Haka dishes.
+        </p>
       </div>
     </div>
   );
-}
+};
+
+export default HomePage2;

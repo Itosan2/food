@@ -9,6 +9,7 @@ import imgMeat1 from "../../assets/meat1.png";
 import imgMeat2 from "../../assets/meat2.png";
 import imgMeat3 from "../../assets/meat3.png";
 import imgChili from "../../assets/chili.png";
+import imgLeave from "../../assets/leave.png";
 
 import "../../css/home.css";
 
@@ -43,7 +44,7 @@ export default function HomePage1() {
   };
 
   return (
-    <div className="home-pages">
+    <div className="home-pages1-container">
       <div
         className={`home-page1 ${
           activePages.page1 || activePages.page2 || activePages.page3
@@ -91,8 +92,8 @@ export default function HomePage1() {
           <p>others</p>
         </div>
         <div className="img-wrapper">
-          <img src={imgFish1} alt="" />
           <img src={imgChili} alt="" />
+          <img src={imgLeave} alt="" />
           <img src={imgMeat3} alt="" />
         </div>
         <div className="tab-wrapper tab-3" onClick={tabClick}>

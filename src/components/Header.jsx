@@ -26,7 +26,7 @@ export default function Header() {
           <span>ng</span>
         </div>
       </Link>
-      <WinSize />
+      {/* <WinSize /> */}
 
       <nav className="navbar">
         <ul className="navbar-list">
@@ -50,6 +50,11 @@ export default function Header() {
               Contact
             </NavLink>
           </li>
+          {/* <li>
+            <NavLink to="modal" className="navbar-item">
+              Modal
+            </NavLink>
+          </li> */}
         </ul>
       </nav>
     </header>

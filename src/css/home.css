@@ -1,10 +1,205 @@
+/* body,
+html {
+  scroll-snap-type: proximity;
+} */
+
 .home-section {
+  position: relative;
+  margin-top: 10px;
   padding: 10px 20px;
+  scroll-snap-type: y proximity;
+  overflow-y: scroll;
+  height: calc(100vh - 140px);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
-.home-pages {
+/* ------------------- 
+     home-page2
+  --------------------   */
+.home-page2-container {
+  display: flex;
+  flex-direction: column;
+  /* min-height: 100vh; */
+  /* margin-top: 80px; */
+  scroll-snap-align: start;
+  color: #5f5f5f;
+  color: black;
+  /* background-color: #f6c003; */
+  /* transition: 10s ease all; */
+}
+
+.home-page2-container > * {
+  /* flex: 1; */
+}
+
+.home-page2-container .page2-left-side {
+  padding: 2rem 2rem;
+  font-size: 1rem;
+  background: #f2f2f2;
+  /* align-items: center; */
+  /* display: flex; */
+  /* flex-direction: column; */
+}
+
+.home-page2-container .page2-left-side > * {
+  max-width: 70ch;
+}
+.home-page2-container .page2-left-side h2 {
+  max-width: 30ch;
+}
+
+.home-page2-container .page2-left-side span {
+  display: inline;
+  font-weight: bold;
+}
+.home-page2-container .page2-left-side p {
+  margin: 2rem 0;
+}
+
+/* page2-right-side */
+
+.home-page2-container .page2-right-side {
+  display: flex;
+  padding: 1rem 2rem;
+  justify-content: center;
+  align-items: center;
+  /* margin: auto; */
+  background: rgb(243, 189, 2);
+}
+
+.page2-right-side .page2-img-wrapper {
+  max-width: 100%;
+  width: 400px;
+  padding: 1rem;
+}
+
+.page2-right-side p {
+  font-weight: bold;
+  max-width: 40ch;
+}
+.page2-img-wrapper img {
+  width: 100%;
+  /* filter: drop-shadow(1px 1px 10px rgb(243, 189, 2)); */
+  filter: drop-shadow(3px 3px 5px rgb(0, 0, 0, 0.8));
+}
+
+/* ------------------- 
+     home-page3
+  --------------------   */
+.home-page3-container {
+  /* display: flex; */
   position: relative;
-  padding-left: 15px;
+  /* height: 100vh; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* padding: 1rem 2rem; */
+  /* margin-top: 80px; */
+  scroll-snap-align: start;
+  color: black;
+}
+
+.home-page3-container > * {
+  flex: 1;
+}
+
+.page3-top-side {
+  display: flex;
+  align-items: center;
+  background-color: #7c9265;
+  padding: 1rem 2rem;
+}
+
+.page3-top-side p {
+  font-weight: bold;
+  max-width: 50ch;
+}
+
+.page3-top-side .page3-img-wrapper {
+  max-width: 80%;
+  width: 400px;
+  padding: 1rem;
+}
+.page3-img-wrapper img {
+  width: 100%;
+  /* filter: drop-shadow(1px 1px 10px rgb(243, 189, 2)); */
+  filter: drop-shadow(3px 3px 5px rgb(0, 0, 0, 0.8));
+}
+
+.home-page3-container .page3-bottom-side {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  background: #f2f2f2;
+}
+
+.home-page3-container .page3-bottom-side span {
+  display: inline;
+  font-weight: bold;
+}
+
+.home-page3-container .page3-bottom-side h2 {
+  max-width: 40ch;
+}
+
+.home-page3-container .page3-bottom-side p {
+  margin: 2rem 0;
+  max-width: 50ch;
+}
+
+.rocket {
+  display: inline-block;
+  position: absolute;
+  bottom: 160px;
+}
+
+.animateRocket {
+  animation-duration: 3s;
+  animation-name: animate-rocket;
+}
+
+@keyframes animate-rocket {
+  0% {
+    transform: scale(1) rotate(-45deg);
+  }
+  3% {
+    transform: scale(1) rotate(10deg);
+  }
+  5% {
+    transform: scale(1.25) rotate(-15deg);
+  }
+  10% {
+    transform: scale(1.5) rotate(5deg);
+  }
+  15% {
+    transform: scale(1.75) rotate(-10deg);
+  }
+  20% {
+    transform: scale(2) rotate(0deg);
+  }
+  30% {
+    transform: scale(3) rotate(0deg);
+  }
+  /* 50% {
+    transform: scale(5) rotate(0deg) translate3d(30vw, -30vh, 0);
+  } */
+  100% {
+    transform: scale(10) translate3d(90vw, -90vh, 0) rotate(45deg);
+  }
+}
+
+/* ------------------- 
+     home-page1 
+  --------------------   */
+
+.home-pages1-container {
+  position: relative;
+  /* margin-bottom: 300px; */
+  scroll-snap-align: start;
+
+  /* padding-left: 15px; */
 }
 
 .home-page1 {
@@ -275,4 +470,17 @@
   letter-spacing: 2px;
   text-align: center;
   transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 480px) {
+  .page2-right-side {
+    flex-direction: column;
+    /* max-width: 100%;
+    width: 400px;
+    padding: 1rem; */
+  }
+
+  .page3-top-side {
+    flex-direction: column;
+  }
 }
